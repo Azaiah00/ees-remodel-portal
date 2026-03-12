@@ -1,10 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { CheckCircle, TrendingUp, Users } from "lucide-react";
+import { CheckCircle, TrendingUp, Users, X } from "lucide-react";
 
 export default function SocialMediaImpact() {
+  const [expandedFlyer, setExpandedFlyer] = useState<null | "flyer1" | "flyer2">(null);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,70 +82,100 @@ export default function SocialMediaImpact() {
 
           {/* Images Right */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2 relative h-[600px] w-full"
+            className="order-1 lg:order-2 relative w-full"
           >
             {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--color-bng-red)] rounded-full blur-[120px] opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[260px] h-[260px] bg-[var(--color-bng-red)] rounded-full blur-[120px] opacity-20" />
+            </div>
 
-            {/* Flyer Image - top/right */}
-            <motion.div
-              animate={{ 
-                y: [0, -15, 0],
-                rotateZ: [-2, 2, -2]
-              }}
-              transition={{ 
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute right-0 lg:-right-4 top-0 w-[70%] sm:w-[60%] lg:w-[75%] aspect-[3/4] z-20 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800"
-            >
-              <Image
-                src="/assets/flyer.webp"
-                alt="EES Remodeling kitchen transformation flyer"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-black/80 backdrop-blur-md rounded border border-zinc-700 p-3 flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-white text-xs font-bold uppercase tracking-widest">High Conversions</span>
-                </div>
-              </div>
-            </motion.div>
+            {/* Side-by-side flyers so EES can clearly see both */}
+            <div className="relative flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10">
+              {/* Flyer Image - left */}
+              <motion.button
+                type="button"
+                onClick={() => setExpandedFlyer("flyer1")}
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-[70%] sm:w-1/2 max-w-xs aspect-[3/4] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800 bg-black flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bng-red)] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+              >
+                <Image
+                  src="/assets/flyer.webp"
+                  alt="EES Remodeling kitchen transformation flyer"
+                  fill
+                  className="object-contain"
+                />
+              </motion.button>
 
-            {/* Ad Image - bottom/left */}
-            <motion.div
-              animate={{ 
-                y: [0, 15, 0],
-                rotateZ: [2, -2, 2]
-              }}
-              transition={{ 
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-              className="absolute left-0 lg:-left-4 bottom-12 w-[65%] sm:w-[55%] lg:w-[70%] z-30 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800"
-            >
-              <Image
-                src="/assets/flyer-2.webp"
-                alt="EES Remodeling social media ad flyer"
-                width={800}
-                height={800}
-                className="w-full h-auto object-contain bg-zinc-900"
-              />
-              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none" />
-            </motion.div>
-            
+              {/* Ad Image - right */}
+              <motion.button
+                type="button"
+                onClick={() => setExpandedFlyer("flyer2")}
+                animate={{
+                  y: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 7.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+                className="w-[70%] sm:w-1/2 max-w-xs aspect-[3/4] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800 bg-black flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-bng-red)] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+              >
+                <Image
+                  src="/assets/flyer-2.webp"
+                  alt="EES Remodeling social media ad flyer"
+                  fill
+                  className="object-contain"
+                />
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox for larger flyer view */}
+      <AnimatePresence>
+        {expandedFlyer && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setExpandedFlyer(null)}
+          >
+            <button
+              type="button"
+              className="absolute top-4 right-4 p-2 text-white hover:text-zinc-300 transition-colors"
+              aria-label="Close flyer preview"
+              onClick={() => setExpandedFlyer(null)}
+            >
+              <X className="w-7 h-7" />
+            </button>
+            <div
+              className="relative max-w-3xl w-full max-h-[90vh] aspect-[3/4] bg-black border border-zinc-800 rounded-lg overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={expandedFlyer === "flyer1" ? "/assets/flyer.webp" : "/assets/flyer-2.webp"}
+                alt="Expanded EES Remodeling flyer"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

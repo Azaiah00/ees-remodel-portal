@@ -67,7 +67,7 @@ export default function Services() {
           What We Bring to the Table
         </span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white uppercase tracking-tight">
-          How Couture House Co. Can Grow Your Brand
+          How Real Advancement Can Grow Your Brand
         </h2>
       </div>
 
@@ -115,7 +115,7 @@ export default function Services() {
         <Proposal />
       </div>
 
-      {/* CTA — Couture House inviting EES to partner */}
+      {/* CTA — Real Advancement inviting EES to partner */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +124,9 @@ export default function Services() {
         className="relative overflow-hidden text-center py-16 sm:py-24 px-4 sm:px-6 bg-[var(--color-bng-red)]"
       >
         <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="text-white/80 text-sm font-bold uppercase tracking-[0.2em] mb-4">Presented by Couture House Co.</p>
+          <p className="text-white/80 text-sm font-bold uppercase tracking-[0.2em] mb-4">
+            Presented by Real Advancement
+          </p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6 sm:mb-8 uppercase tracking-tighter">
             Let&apos;s Partner
           </h2>
@@ -137,7 +139,8 @@ export default function Services() {
       {/* Footer — who presented this */}
       <footer className="py-8 sm:py-12 border-t border-zinc-900 text-center">
         <p className="text-zinc-500 text-xs sm:text-sm uppercase tracking-widest font-mono">
-          This portal was prepared for EES Remodeling by <span className="text-zinc-400 font-semibold">Couture House Co.</span>
+          This portal was prepared for EES Remodeling by{" "}
+          <span className="text-zinc-400 font-semibold">Real Advancement</span>
         </p>
       </footer>
     </section>

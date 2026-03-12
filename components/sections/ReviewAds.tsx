@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Star, Quote, Megaphone, Share2, X } from "lucide-react";
 
 /**
- * ReviewAds section: showcases how Couture House Co. transforms EES's real
+ * ReviewAds section: showcases how Real Advancement transforms EES's real
  * client reviews (including Google reviews) into scroll-stopping visual ads
  * across every channel—IG, FB, Google, print, and beyond.
  */
@@ -111,7 +111,7 @@ export default function ReviewAds() {
               It&apos;s the hook.&rdquo;
             </p>
             <p className="mt-4 text-zinc-500 text-sm font-mono uppercase tracking-widest">
-              — Couture House Co. approach
+              — Real Advancement approach
             </p>
           </div>
         </motion.div>

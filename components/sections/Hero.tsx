@@ -59,7 +59,7 @@ export default function Hero() {
                 <span className="w-2 h-2 rounded-full bg-[var(--color-bng-red)] animate-pulse shadow-[0_0_10px_rgba(196,30,58,0.8)]" />
               </div>
               <span className="text-zinc-300 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
-                Prepared for EES Remodeling · Couture House Co.
+                Prepared for EES Remodeling · Real Advancement
               </span>
             </div>
           </motion.div>

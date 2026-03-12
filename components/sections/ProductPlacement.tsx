@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Layers, Refrigerator, Flame, LayoutTemplate, Sparkles, X } from "lucide-react";
 
 /**
- * ProductPlacement section: demonstrates how Couture House Co. can visualize
+ * ProductPlacement section: demonstrates how Real Advancement can visualize
  * a kitchen remodel progression—from raw space to fully staged with cabinets,
  * fridge, stove, and countertops. Uses EES/product-placement assets.
  */
@@ -202,7 +202,7 @@ export default function ProductPlacement() {
           className="mt-16 text-center"
         >
           <p className="text-zinc-500 text-sm sm:text-base max-w-xl mx-auto">
-            <span className="text-[var(--color-bng-red)] font-semibold">Couture House Co.</span> creates 
+            <span className="text-[var(--color-bng-red)] font-semibold">Real Advancement</span> creates
             this visual journey for your clients—so every remodel you complete has content that converts.
           </p>
         </motion.div>

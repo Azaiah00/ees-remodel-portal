@@ -13,8 +13,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "EES Remodeling · Presentation by Couture House Co.",
-  description: "A presentation for EES Remodeling by Couture House Co. — how we can grow your South Florida remodeling business with social media content and strategy.",
+  title: "EES Remodeling · Presentation by Real Advancement",
+  description:
+    "A presentation for EES Remodeling by Real Advancement — how we can grow your South Florida remodeling business with social media content and strategy.",
 };
 
 export const viewport = {

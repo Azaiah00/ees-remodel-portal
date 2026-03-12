@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FileText, Download, CheckCircle2 } from "lucide-react";
 
 /**
- * Proposal section: highlights Couture House Co.'s formal proposal for EES Remodeling.
+ * Proposal section: highlights Real Advancement's formal proposal for EES Remodeling.
  * Links to the ees_proposal_final.pdf so the client can review the full scope,
  * pricing, and deliverables.
  */
