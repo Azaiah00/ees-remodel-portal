@@ -1,0 +1,62 @@
+{
+  "weekId": "week-2",
+  "dates": "Mar 09 - Mar 15, 2026",
+  "status": "Ready",
+  "content": [
+    {
+      "id": "video-ad-1",
+      "type": "video_ad",
+      "aspectRatio": "9/16",
+      "title": "Video Ad - Kitchen Remodel CTA",
+      "thumbnail": "https://placehold.co/400x710/1e3a5f/ffffff?text=Video+Ad",
+      "assetUrl": null,
+      "platform": "Meta Ads",
+      "caption": "Your dream kitchen is one quote away. EES Remodeling—Boca Raton's trusted remodeling contractor. Free estimate. Get started today.",
+      "hashtags": "#kitchenremodel #bocaraton #eesremodeling #freequote",
+      "instructions": [
+        {
+          "platform": "Meta Ads",
+          "caption": "Your dream kitchen is one quote away. EES Remodeling—Boca Raton's trusted remodeling contractor. Free estimate. Get started today.",
+          "hashtags": "#kitchenremodel #bocaraton #eesremodeling #freequote",
+          "postingTime": "Best: 4 PM - 8 PM"
+        }
+      ]
+    },
+    {
+      "id": "ig-2",
+      "type": "instagram_post",
+      "aspectRatio": "3/4",
+      "title": "Flooring Installation - Palm Beach",
+      "thumbnail": "https://placehold.co/600x800/1e3a5f/ffffff?text=Flooring",
+      "platform": "Instagram",
+      "caption": "Luxury vinyl plank installation in Palm Beach County! EES Remodeling offers flooring for every style and budget. Serving Boca Raton, Delray Beach, West Palm & all of South Florida. Free quote!",
+      "hashtags": "#palmbeachremodel #flooring #eesremodeling #bocaraton #luxuryvinyl #homeremodel",
+      "instructions": [
+        {
+          "platform": "Instagram",
+          "caption": "Luxury vinyl plank installation in Palm Beach County! EES Remodeling offers flooring for every style and budget. Serving Boca Raton, Delray Beach, West Palm & all of South Florida. Free quote!",
+          "hashtags": "#palmbeachremodel #flooring #eesremodeling #bocaraton #luxuryvinyl #homeremodel",
+          "postingTime": "1:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "fb-2",
+      "type": "facebook_post",
+      "aspectRatio": "3/4",
+      "title": "Licensed General Contractor - South Florida",
+      "thumbnail": "https://placehold.co/600x800/0284c7/ffffff?text=Free+Estimate",
+      "platform": "Facebook",
+      "caption": "EES Remodeling is a fully licensed general contractor (CGC1537234). Kitchen, bathroom, full home remodel—we do it all. Serving Palm Beach, Broward & Miami-Dade. Free quote: eesremodeling.com or call (561) 783-5921",
+      "hashtags": "#bocaratonremodel #eesremodeling #southflorida #freequote",
+      "instructions": [
+        {
+          "platform": "Facebook",
+          "caption": "EES Remodeling is a fully licensed general contractor (CGC1537234). Kitchen, bathroom, full home remodel—we do it all. Serving Palm Beach, Broward & Miami-Dade. Free quote: eesremodeling.com or call (561) 783-5921",
+          "hashtags": "#bocaratonremodel #eesremodeling #southflorida #freequote",
+          "postingTime": "8:00 AM"
+        }
+      ]
+    }
+  ]
+}
