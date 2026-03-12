@@ -59,7 +59,7 @@ const deliverables: DeliverableItem[] = [
   {
     id: 4,
     title: "Sample Video",
-    subtitle: "EES Remodeling in action",
+    subtitle: "Example from another client",
     type: "Video",
     image: "/flyer-example.png",
     colSpan: "md:row-span-2",

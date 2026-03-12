@@ -61,10 +61,14 @@ export default function ReviewAds() {
             Your Reviews. Our Ads.
             <div className="absolute bottom-1 left-0 right-0 h-1 bg-[var(--color-bng-red)]/30 -z-10" />
           </h2>
-          <p className="text-zinc-400 text-lg sm:text-xl font-light leading-relaxed mb-8">
-            That 5-star Google review isn&apos;t just a badge—it&apos;s a headline. We take EES&apos;s real 
-            client testimonials and turn them into scroll-stopping creative. Same words. 
+          <p className="text-zinc-400 text-lg sm:text-xl font-light leading-relaxed mb-3">
+            That 5-star Google review isn&apos;t just a badge—it&apos;s a headline. We take real
+            client testimonials and turn them into scroll-stopping creative. Same words.
             <span className="text-white font-medium"> Ten times the impact.</span>
+          </p>
+          <p className="text-zinc-500 text-xs sm:text-sm max-w-2xl mx-auto">
+            The ad examples below are from another remodeling client we work with. For EES, we&apos;ll use 
+            <span className="text-zinc-300 font-medium"> your own reviews and project photos</span> to build the same style of campaigns.
           </p>
 
           {/* Value props row */}

@@ -47,10 +47,14 @@ export default function TimelapseVideos() {
             Timelapse That Goes Viral
             <div className="absolute bottom-1 left-0 right-0 h-1 bg-[var(--color-bng-red)]/30 -z-10" />
           </h2>
-          <p className="text-zinc-400 text-lg sm:text-xl font-light leading-relaxed mb-6">
-            Hours of work. Seconds of scroll. We turn EES&apos;s real remodels into 
+          <p className="text-zinc-400 text-lg sm:text-xl font-light leading-relaxed mb-4">
+            Hours of work. Seconds of scroll. We turn full remodel journeys into
             <span className="text-white font-medium"> timelapse content that stops thumbs</span>— 
             the kind Reels and TikTok push to the For You page. No fluff. Just transformation.
+          </p>
+          <p className="text-zinc-500 text-sm sm:text-base max-w-2xl mx-auto mb-2">
+            The examples below are from another remodeling client we work with, BNG Remodel. For EES, we&apos;ll apply
+            the same approach using <span className="text-zinc-300 font-medium">your own projects and footage</span>.
           </p>
           <p className="text-zinc-500 text-sm sm:text-base max-w-2xl mx-auto">
             Perfect 9:16 format. Built for saves, shares, and that sweet algorithm boost.

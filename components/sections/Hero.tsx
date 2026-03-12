@@ -84,8 +84,8 @@ export default function Hero() {
             We transform your stunning remodels into engaging social media content that stops scrolling and drives <strong className="text-white font-semibold">high-quality leads</strong> directly to EES Remodeling.
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+          {/* CTA Button */}
+          <motion.div variants={itemVariants} className="flex flex-col w-full sm:w-auto">
             <Link
               href="/weekly-content"
               className="group relative px-8 py-4 sm:px-12 sm:py-5 font-bold text-sm sm:text-base uppercase tracking-widest text-white overflow-hidden bg-[var(--color-bng-red)] flex items-center justify-center gap-3 transition-transform hover:scale-105 active:scale-95"
@@ -96,21 +96,16 @@ export default function Hero() {
                 View Weekly Content
               </span>
             </Link>
-            
-            <a
-              href="#gallery"
-              className="group relative px-8 py-4 sm:px-12 sm:py-5 font-bold text-sm sm:text-base uppercase tracking-widest text-white border border-zinc-700 bg-zinc-900/30 backdrop-blur-md flex items-center justify-center gap-3 transition-all hover:bg-zinc-800 hover:border-zinc-500"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-                See the Impact
-              </span>
-            </a>
           </motion.div>
 
-          {/* Sample Video - EES Remodeling in action (9:16 vertical / Reels style) */}
+          {/* Sample Video - example from another remodeling client (9:16 vertical / Reels style) */}
           <motion.div variants={itemVariants} className="mt-16 sm:mt-20 w-full max-w-[280px] sm:max-w-[320px] mx-auto">
-            <p className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-4">Sample video</p>
+            <p className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-1">
+              Sample video
+            </p>
+            <p className="text-zinc-600 text-[10px] uppercase tracking-[0.2em] mb-3">
+              Example from another client — we&apos;ll create this style of video with EES projects.
+            </p>
             <div className="relative rounded-lg overflow-hidden border border-zinc-800 bg-black shadow-2xl shadow-black/50 group aspect-[9/16]">
               <video
                 src="/0308-bng-remodel-sample-vid.mp4"

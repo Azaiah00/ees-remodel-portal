@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Instagram, Facebook, Video, FileText, ArrowRight } from "lucide-react";
+import Proposal from "./Proposal";
 
 /** EES Remodeling services: IG/FB content, video ads, AI-assisted copy for South Florida */
 const services = [
@@ -107,6 +108,11 @@ export default function Services() {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Proposal section with pricing, placed directly above the yellow "Let's Partner" band */}
+      <div className="mt-4 sm:mt-8">
+        <Proposal />
       </div>
 
       {/* CTA — Couture House inviting EES to partner */}

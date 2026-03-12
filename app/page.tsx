@@ -2,7 +2,6 @@ import Navbar from "@/components/ui/Navbar";
 import ScrollToHash from "@/components/ui/ScrollToHash";
 import Hero from "@/components/sections/Hero";
 import ProductPlacement from "@/components/sections/ProductPlacement";
-import Proposal from "@/components/sections/Proposal";
 import Scope from "@/components/sections/Scope";
 import Services from "@/components/sections/Services";
 import BeforeAfterGallery from "@/components/sections/BeforeAfterGallery";
@@ -16,9 +15,6 @@ export default function Home() {
       <Navbar />
       <ScrollToHash />
       <Hero />
-
-      <Proposal />
-
       <ProductPlacement />
 
       <BeforeAfterGallery />

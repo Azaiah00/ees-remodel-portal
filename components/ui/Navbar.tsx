@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,9 +15,14 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showPinModal, setShowPinModal] = useState(false);
+  const [pinInput, setPinInput] = useState("");
+  const [pinError, setPinError] = useState("");
+  const [pendingPath, setPendingPath] = useState<string | null>(null);
   const isHome = pathname === "/";
 
   useEffect(() => {
@@ -50,6 +55,29 @@ export default function Navbar() {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleProtectedNav = (path: string) => {
+    setMobileOpen(false);
+    setPinInput("");
+    setPinError("");
+    setPendingPath(path);
+    setShowPinModal(true);
+  };
+
+  const verifyPinAndNavigate = () => {
+    if (pinInput === "5017") {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("weeklyContentUnlocked", "true");
+      }
+      const target = pendingPath ?? "/weekly-content";
+      setShowPinModal(false);
+      setPinInput("");
+      setPinError("");
+      router.push(target);
+      return;
+    }
+    setPinError("Incorrect PIN. Please try again.");
   };
 
   return (
@@ -115,15 +143,16 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link
-              href="/weekly-content"
+            <button
+              type="button"
+              onClick={() => handleProtectedNav("/weekly-content")}
               className={cn(
                 "text-xs font-bold uppercase tracking-widest transition-colors duration-200 hover:text-[var(--color-bng-red)]",
                 pathname === "/weekly-content" ? "text-[var(--color-bng-red)]" : "text-zinc-500"
               )}
             >
               Content
-            </Link>
+            </button>
           </div>
 
           {/* Mobile hamburger */}
@@ -206,9 +235,9 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/weekly-content"
-                onClick={() => setMobileOpen(false)}
+              <button
+                type="button"
+                onClick={() => handleProtectedNav("/weekly-content")}
                 className={cn(
                   "block w-full text-left px-4 py-3 text-sm font-bold uppercase tracking-widest transition-colors border-l-2",
                   pathname === "/weekly-content"
@@ -217,8 +246,67 @@ export default function Navbar() {
                 )}
               >
                 Content
-              </Link>
+              </button>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* PIN modal for protected content */}
+      <AnimatePresence>
+        {showPinModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4"
+            onClick={() => setShowPinModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="w-full max-w-sm rounded-lg border border-zinc-800 bg-zinc-950 p-6 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2 className="text-lg font-bold uppercase tracking-widest mb-2">
+                Enter Access PIN
+              </h2>
+              <p className="text-xs text-zinc-500 mb-4">
+                Weekly content is pinned for EES only. Please enter the 4‑digit code to continue.
+              </p>
+              <input
+                type="password"
+                inputMode="numeric"
+                maxLength={4}
+                value={pinInput}
+                onChange={(e) => {
+                  setPinInput(e.target.value.replace(/[^0-9]/g, ""));
+                  if (pinError) setPinError("");
+                }}
+                className="w-full bg-black border border-zinc-700 text-white px-3 py-2 text-center tracking-[0.5em] text-lg mb-3 outline-none focus:border-[var(--color-bng-red)]"
+                placeholder="••••"
+                autoFocus
+              />
+              {pinError && (
+                <p className="text-xs text-red-500 mb-2">{pinError}</p>
+              )}
+              <div className="flex justify-end gap-2 mt-2">
+                <button
+                  type="button"
+                  className="px-3 py-2 text-xs uppercase tracking-widest text-zinc-400 hover:text-white"
+                  onClick={() => setShowPinModal(false)}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="px-4 py-2 text-xs font-bold uppercase tracking-widest bg-[var(--color-bng-red)] text-white hover:opacity-90"
+                  onClick={verifyPinAndNavigate}
+                >
+                  Unlock
+                </button>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

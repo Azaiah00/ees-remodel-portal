@@ -89,7 +89,7 @@ export default function SocialMediaImpact() {
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--color-bng-red)] rounded-full blur-[120px] opacity-20 pointer-events-none" />
 
-            {/* Flyer Image */}
+            {/* Flyer Image - top/right */}
             <motion.div
               animate={{ 
                 y: [0, -15, 0],
@@ -102,9 +102,9 @@ export default function SocialMediaImpact() {
               }}
               className="absolute right-0 lg:-right-4 top-0 w-[70%] sm:w-[60%] lg:w-[75%] aspect-[3/4] z-20 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800"
             >
-              <Image 
-                src="/flyer-example.png"
-                alt="EES Remodeling Flyer Example"
+              <Image
+                src="/assets/flyer.webp"
+                alt="EES Remodeling kitchen transformation flyer"
                 fill
                 className="object-cover"
               />
@@ -117,7 +117,7 @@ export default function SocialMediaImpact() {
               </div>
             </motion.div>
 
-            {/* Ad Image */}
+            {/* Ad Image - bottom/left */}
             <motion.div
               animate={{ 
                 y: [0, 15, 0],
@@ -131,9 +131,9 @@ export default function SocialMediaImpact() {
               }}
               className="absolute left-0 lg:-left-4 bottom-12 w-[65%] sm:w-[55%] lg:w-[70%] z-30 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-zinc-800"
             >
-              <Image 
-                src="/ad-1.png"
-                alt="EES Remodeling Social Media Ad"
+              <Image
+                src="/assets/flyer-2.webp"
+                alt="EES Remodeling social media ad flyer"
                 width={800}
                 height={800}
                 className="w-full h-auto object-contain bg-zinc-900"
