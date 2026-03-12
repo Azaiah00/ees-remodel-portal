@@ -26,7 +26,7 @@ export default function Proposal() {
         </h2>
       </div>
 
-      {/* Proposal card with PDF download */}
+      {/* Proposal card with PDF download and on-page summary of key terms */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,30 +53,83 @@ export default function Proposal() {
 
           <div className="flex-1">
             <p className="text-zinc-400 mb-6 leading-relaxed">
-              Our formal proposal outlines exactly how Couture House Co. will help EES Remodeling
-              dominate South Florida&apos;s social feeds. From Boca Raton to Miami Dade, we&apos;ll turn your
-              stunning bathroom remodels, kitchen renovations, and full-home projects into content
-              that drives leads and builds trust.
+              This partnership is built to give EES Remodeling a steady pipeline of qualified residential
+              remodeling opportunities from Instagram, with low fixed overhead and shared incentives once
+              real revenue is closed.
             </p>
 
+            {/* High-level summary of what we offer EES */}
             <ul className="space-y-3 mb-8 text-zinc-300 text-sm">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[var(--color-bng-red)] flex-shrink-0 mt-0.5" />
-                Scope of work tailored to Palm Beach, Broward & Miami Dade
+                Daily Instagram management: posts, reels, and stories with full content planning,
+                editing, scheduling, and optimization.
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[var(--color-bng-red)] flex-shrink-0 mt-0.5" />
-                Social content strategy: Reels, feed posts, video ads
+                Audience engagement and DM management so only serious, qualified homeowners reach EES.
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[var(--color-bng-red)] flex-shrink-0 mt-0.5" />
-                Investment options and timelines
+                Lead vetting based on ideal projects: kitchens, bathrooms, additions, flooring, decks,
+                and full-home renovations.
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[var(--color-bng-red)] flex-shrink-0 mt-0.5" />
-                Next steps to get started
+                Geographic focus on Miami-Dade and Palm Beach counties to match EES&apos;s service area.
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[var(--color-bng-red)] flex-shrink-0 mt-0.5" />
+                Monthly reporting and optimization to improve lead quality and conversion over time.
               </li>
             </ul>
+
+            {/* Clear, on-page pricing package so you can close live without opening the PDF */}
+            <div className="mb-8 border border-zinc-800 bg-black/40 p-4 sm:p-6">
+              <h4 className="text-lg font-semibold uppercase tracking-wide mb-3">
+                Commercial Structure & Pricing
+              </h4>
+              <p className="text-zinc-400 text-sm mb-4">
+                Low fixed retainer plus performance-based commission tied to closed project revenue.
+              </p>
+
+              <div className="grid gap-4 md:grid-cols-2 text-sm">
+                <div className="space-y-2">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
+                    Base Management
+                  </p>
+                  <p className="text-xl font-bold">
+                    $500<span className="text-sm font-normal text-zinc-400"> / month</span>
+                  </p>
+                  <p className="text-zinc-400">
+                    Covers daily Instagram content, engagement, DM handling, lead vetting, and monthly
+                    optimization. No on-site filming included.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
+                    Pay‑Per‑Close Commission
+                  </p>
+                  <ul className="space-y-1 text-zinc-300">
+                    <li>
+                      <span className="font-semibold">10%</span> on small projects up to $10,000.
+                    </li>
+                    <li>
+                      <span className="font-semibold">5%</span> on medium projects from $10,000–$25,000.
+                    </li>
+                    <li>
+                      <span className="font-semibold">3%</span> on large projects above $25,000.
+                    </li>
+                  </ul>
+                  <p className="text-zinc-500 text-xs">
+                    Commission applies only to qualified opportunities generated or materially influenced by
+                    this Instagram program. Pre‑existing active deals can be identified at onboarding and
+                    excluded for fairness.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <a
               href="/ees_proposal_final.pdf"
